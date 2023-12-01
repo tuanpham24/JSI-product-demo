@@ -1,0 +1,37 @@
+
+.input-auth {
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 2px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+}
+.input-auth:focus {
+  border: 1px solid palevioletred;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.auth-wrapper {
+  width: 100%;
+  margin-top: 100px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+}
+
+.auth-wrapper .banner {
+  height: 379px;
+  /* background-color: red; */
+}
+.auth-wrapper .banner-photo {
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0px 10px 10px 0px;
+
+}
+
+.sign-in-with button {
+  width: 100%;
+}
