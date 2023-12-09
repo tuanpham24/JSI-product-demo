@@ -5,13 +5,6 @@ const repeatPasswordInput = document.getElementById("repeat-password");
 const signUpBtn = document.getElementById("sign-up-btn");
 const googleBtn = document.getElementById("google-btn");
 
-// Google provider: Sign in with Google
-const googleProvider = new firebase.auth.GoogleAuthProvider();
-console.log(googleProvider);
-
-// Use firestore
-const db = firebase.firestore();
-
 
 // Function handle Sign up with Email và Password
 function signUp(event) {
@@ -35,8 +28,8 @@ function signUp(event) {
     return;
   }
 
-  // Check if any field is empty
-  var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  // Check email format
+  let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   if (!email.match(validRegex)) {
     alert("Email is invalid! Try again");
     return;
@@ -60,6 +53,7 @@ function signUp(event) {
     .then((docRef) => {
       console.log("Document written with ID: ", docRef.id);
       alert("Register successfully!");
+      window.location.assign("http://127.0.0.1:5500/sign-in.html");
     })
     .catch((error) => {
       let errorCode = error.code;

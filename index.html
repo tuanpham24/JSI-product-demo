@@ -4,11 +4,65 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
+  <!-- Fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="./src/css/style.css">
+  <link rel="stylesheet" href="./src/css/index.css">
 </head>
 <body>
   
-  <h1>Home page</h1>
+  <div class="page-wrapper">
+    <header class="shadow-md p-2">
+      <div class="container-md d-flex items-center justify-between">
+        <div class="logo">
+          <img src="./src/images/logo.png" alt="logo" width="100px">
+        </div>
+
+        <div class="menu">
+
+        </div>
+
+        <div class="action">
+          <div class="d-flex">
+            <div class="cart">
+
+            </div>
+            <div class="author relative">
+              <button class="border-none bg-white text-center ">
+                <i class="fa-regular fa-user rounded-circle"></i>
+              </button>
+              <div class="drop-authur absolute bg-white p-2 rounded-sm animation-dropdown" id="author-container">
+                <p><a href="./sign-up.html">Sign up</a></p>
+                <p><a href="./sign-in.html">Sign in</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container-md">
+        <h1>Home page</h1>
+
+      </div>
+    </main>
+
+    <footer>
+
+    </footer>
+  </div>
   
+  <script>
+    const authorContainer = document.getElementById("author-container");
+    const accountLogged = JSON.parse(localStorage.getItem("acc-logged"));
+    console.log(accountLogged);
+    if(accountLogged) {
+      authorContainer.innerHTML = `
+        <h3>${accountLogged.fullName}</h3>
+        <button>Log out</button>
+      `
+    }
+  </script>
 </body>
 </html>

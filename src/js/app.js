@@ -21,3 +21,11 @@ console.log(firebase);
 const auth = firebase.auth();
 console.log(auth);
 
+// Use firestore
+const db = firebase.firestore();
+
+// Google provider: Sign in with Google
+const googleProvider = new firebase.auth.GoogleAuthProvider();
+console.log(googleProvider);
+
+
